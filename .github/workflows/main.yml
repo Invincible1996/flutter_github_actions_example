@@ -34,5 +34,6 @@ jobs:
       - name: View content
         run: |
           echo $pwd
-          cd ./build/windows/x64/Release
+          cd ./build/windows/runner/Release
+          echo $pwd
           ls -R
