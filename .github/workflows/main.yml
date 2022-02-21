@@ -31,9 +31,17 @@ jobs:
         run: |
           flutter pub get
           flutter build windows --release
+      - name: Copy plugin
+        run: |
+          cp -r ./plugin/* ./build/windows/runner/Release
       - name: View content
         run: |
           echo $pwd
           cd ./build/windows/runner/Release
           echo $pwd
           ls -R
+      - name: Archive zip file
+        uses: thedoctor0/zip-release@master
+        with:
+          directory: ./build/windows/runner/Release
+          filename: Release.zip
