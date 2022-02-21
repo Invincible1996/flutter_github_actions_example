@@ -34,12 +34,6 @@ jobs:
       - name: Copy plugin
         run: |
           cp -r ./plugin/* ./build/windows/runner/Release
-      - name: View content
-        run: |
-          echo $pwd
-          cd ./build/windows/runner/Release
-          echo $pwd
-          ls -R
       - name: Archive zip file
         uses: thedoctor0/zip-release@master
         with:
