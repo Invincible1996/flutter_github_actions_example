@@ -44,7 +44,7 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           directory: ./build/windows/runner/Release
-          filename: Release.zip
+          filename: release-${{ steps.get_version.outputs.VERSION }}.zip
       - name: Create release
         id: create_release
         uses: actions/create-release@v1
