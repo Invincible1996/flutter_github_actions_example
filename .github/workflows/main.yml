@@ -32,4 +32,7 @@ jobs:
           flutter pub get
           flutter build windows --release
       - name: View content
-        run: ls -R
+        run: |
+          echo $pwd
+          cd ./build/windows/x64/Release
+          ls -R
